@@ -1,0 +1,15 @@
+Changes in module 'nf-core/fastp'
+--- modules/nf-core/fastp/main.nf
++++ modules/nf-core/fastp/main.nf
+@@ -19,7 +19,8 @@
+     tuple val(meta), path('*.html')           , emit: html
+     tuple val(meta), path('*.log')            , emit: log
+     path "versions.yml"                       , emit: versions
+-    tuple val(meta), path('*.fail.fastq.gz')  , optional:true, emit: reads_fail
++    // tuple val(meta), path('*.fail.fastq.gz')  , optional:true, emit: reads_fail
++    tuple val(meta), path('*.fail.fastq.gz')  , optional:true, emit: reads_failed
+     tuple val(meta), path('*.merged.fastq.gz'), optional:true, emit: reads_merged
+ 
+     when:
+
+************************************************************
